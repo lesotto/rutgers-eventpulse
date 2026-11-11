@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rutgers EventPulse — Scarlet Knights Football Fan Companion</title>
+<meta name="description" content="EventPulse for Rutgers Football: personal season itinerary for every home and away game, SHI Stadium map, QR check-in, national watch parties, alumni outreach and a real-time fan signal console. A FuzeBox demo.">
+<meta name="author" content="FuzeBox">
+<meta property="og:title" content="Rutgers EventPulse — Scarlet Knights Football">
+<meta property="og:description" content="Hyper-personalized game day: itinerary, map, QR check-in, watch parties and alumni outreach.">
+<meta property="og:image" content="v/flyover_west_gate.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23CC0033'/><path d='M7 20 Q16 4 25 20' stroke='white' stroke-width='3' fill='none'/><circle cx='16' cy='21' r='3' fill='white'/></svg>">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#home" aria-label="Rutgers EventPulse home">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#CC0033"/><path d="M7 20 Q16 4 25 20" stroke="#fff" stroke-width="3" fill="none"/><circle cx="16" cy="21" r="3" fill="#fff"/></svg>
+    <span><b>EventPulse</b><small>Rutgers Football</small></span>
+  </a>
+  <nav class="tabs" id="tabs" aria-label="Sections">
+    <a href="#home" data-v="home"><i data-lucide="house"></i><span>Home</span></a>
+    <a href="#season" data-v="season"><i data-lucide="calendar-range"></i><span>My Season</span></a>
+    <a href="#map" data-v="map"><i data-lucide="map"></i><span>SHI Map</span></a>
+    <a href="#watch" data-v="watch"><i data-lucide="tv"></i><span>Watch Parties</span></a>
+    <a href="#checkin" data-v="checkin"><i data-lucide="qr-code"></i><span>Check-In</span></a>
+    <a href="#console" data-v="console"><i data-lucide="activity"></i><span>Athletics Console</span></a>
+    <a href="#videos" data-v="videos"><i data-lucide="clapperboard"></i><span>Videos</span></a>
+  </nav>
+  <button class="pill-btn" id="openConcierge"><i data-lucide="sparkles"></i><span>Ask Henry</span></button>
+</header>
+
+<main id="view"></main>
+
+<aside class="concierge" id="concierge" hidden aria-label="Henry, game day concierge">
+  <div class="c-head">
+    <div><b>Henry</b><small>Game day concierge · built-in answers</small></div>
+    <button class="icon-btn" id="closeConcierge" aria-label="Close"><i data-lucide="x"></i></button>
+  </div>
+  <div class="c-log" id="cLog"></div>
+  <div class="c-chips" id="cChips"></div>
+  <form class="c-form" id="cForm"><input id="cInput" placeholder="Ask about parking, gates, watch parties…" autocomplete="off"><button aria-label="Send"><i data-lucide="send"></i></button></form>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer class="foot">
+  <p><b>A FuzeBox EventPulse demonstration.</b> Not affiliated with or endorsed by Rutgers University or Rutgers Athletics. Schedules, policies and watch-party locations are compiled from official Rutgers pages (linked in each section); some map pins are approximate — confirm on the official stadium map. Live-signal console data, outreach messages and gifts are simulated samples. Videos are AI concept footage, not real events. Imagery © Esri; map data © OpenStreetMap contributors / OpenFreeMap.</p>
+</footer>
+
+<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
